@@ -1,8 +1,17 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import { decrease, increase } from './redux/actions';
 import Button from './Button';
 import './App.css';
 
-function App() {
+interface RootType {
+  decrease: () => object;
+  increase: () => object;
+}
+
+function App(props: RootType) {
+  console.log('root props:  ', props)
+  const { decrease, increase } = props;
   const [count, setCount] = useState<number>(0);
   return (
     <div className="App">
@@ -15,4 +24,7 @@ function App() {
   );
 }
 
-export default App;
+export default connect(
+  null,
+  { decrease, increase }
+)(App);
