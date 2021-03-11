@@ -1,5 +1,5 @@
-const INCREASE_COUNT = 'INCREASE_COUNT';
-const DECREASE_COUNT = 'DECREASE_COUNT';
+export const INCREASE_COUNT: string = 'INCREASE_COUNT';
+export const DECREASE_COUNT: string = 'DECREASE_COUNT';
 
 interface StateType { count: number; }
 
